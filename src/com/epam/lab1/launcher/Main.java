@@ -30,16 +30,16 @@ public class Main {
 		aircompany.displayPlanes();
 		System.out.println("Planes count: " + aircompany.getPlanesCount());
 		
-		// ����� ����������� � ����������������
+		// Display total info
 		System.out.println("\nTotal passenger: " + aircompany.getTotalPassengers() + " persons.");
 		System.out.println("Total baggage: " + aircompany.getTotalBaggage() + " kg\n");
 
-		// ��������� �� ��������� ������
+		// Sort by distance
 		System.out.println("Distance sort: ");
 		aircompany.sort();
 		aircompany.displayPlanes();
 
-		// ������� ��������������� ���������
+		// Fule consuption filter
 		int min = 50;
 		int max = 90;
 		System.out.println("\nFiltered list ("+min+"-"+max+"): ");
