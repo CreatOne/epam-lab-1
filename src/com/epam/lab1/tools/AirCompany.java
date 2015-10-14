@@ -8,7 +8,7 @@ import com.epam.lab1.Aircraft;
 import com.epam.lab1.AircraftEnum;
 import com.epam.lab1.ConcreteAircraftFactory;
 
-public class Dispatcher {
+public class AirCompany {
 	ArrayList<Aircraft> planes = new ArrayList<Aircraft>();
 
 	/**

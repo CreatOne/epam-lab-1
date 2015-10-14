@@ -4,9 +4,10 @@
  * @date 09.10.2015
  * @version 1
  
- 	9.	Авиакомпания. Определить иерархию самолетов. Создать авиакомпанию. Посчитать общую вместимость и грузоподъемность. 
- 	Провести сортировку самолетов компании по дальности полета. Найти самолет в компании, 
- 	соответствующий заданному диапазону параметров потребления горючего.
+ 	9.	Авиакомпания. Определить иерархию самолетов. Создать авиакомпанию. 
+ 	Посчитать общую вместимость и грузоподъемность. 
+ 	Провести сортировку самолетов компании по дальности полета. 
+ 	Найти самолет в компании, соответствующий заданному диапазону параметров потребления горючего.
  */
 
 package com.epam.lab1.launcher;
@@ -14,37 +15,35 @@ package com.epam.lab1.launcher;
 import java.util.ArrayList;
 
 import com.epam.lab1.Aircraft;
-import com.epam.lab1.tools.Dispatcher;
+import com.epam.lab1.tools.AirCompany;
 
-public class Main {
+public class Main {	
 	public static void main(String[] args) {
-		Dispatcher dispatcher = new Dispatcher();
+		AirCompany aircompany = new AirCompany();
 
 		System.out.println("Create planes:");
 
 		// Creating new planes
-		dispatcher.createPlanes(5);
-
+		aircompany.createPlanes(5);
+		
 		// Display all planes
-		dispatcher.displayPlanes();
-		System.out.println("Planes count: " + dispatcher.getPlanesCount());
+		aircompany.displayPlanes();
+		System.out.println("Planes count: " + aircompany.getPlanesCount());
+		
+		// ����� ����������� � ����������������
+		System.out.println("\nTotal passenger: " + aircompany.getTotalPassengers() + " persons.");
+		System.out.println("Total baggage: " + aircompany.getTotalBaggage() + " kg\n");
 
-		// Show total information
-		System.out.println("\nTotal passenger: "
-				+ dispatcher.getTotalPassengers() + " persons.");
-		System.out.println("Total baggage: " + dispatcher.getTotalBaggage()
-				+ " kg\n");
-
-		// Sort list
+		// ��������� �� ��������� ������
 		System.out.println("Distance sort: ");
-		dispatcher.sort();
-		dispatcher.displayPlanes();
+		aircompany.sort();
+		aircompany.displayPlanes();
 
-		// Filter by consumption
+		// ������� ��������������� ���������
 		int min = 50;
 		int max = 90;
-		System.out.println("\nFiltered list (" + min + "-" + max + "): ");
-		ArrayList<Aircraft> filtered_planes = dispatcher.filter(min, max);
-		dispatcher.displayPlanes(filtered_planes);
+		System.out.println("\nFiltered list ("+min+"-"+max+"): ");
+		ArrayList<Aircraft> filtered_planes = aircompany.filter(min, max);
+		aircompany.displayPlanes(filtered_planes);
 	}
 }

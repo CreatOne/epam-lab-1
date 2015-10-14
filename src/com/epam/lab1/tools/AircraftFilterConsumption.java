@@ -1,4 +1,4 @@
-package com.epam.lab1;
+package com.epam.lab1.tools;
 
 //import java.nio.file.DirectoryStream.Filter;
 import java.util.ArrayList;
