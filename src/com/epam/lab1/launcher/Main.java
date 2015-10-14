@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import com.epam.lab1.Aircraft;
 import com.epam.lab1.tools.AirCompany;
 
+// oleg_anastassov@epam.com
+
 public class Main {	
 	public static void main(String[] args) {
 		AirCompany aircompany = new AirCompany();
@@ -39,7 +41,7 @@ public class Main {
 		aircompany.sort();
 		aircompany.displayPlanes();
 
-		// Fule consuption filter
+		// Fuel consuption filter
 		int min = 50;
 		int max = 90;
 		System.out.println("\nFiltered list ("+min+"-"+max+"): ");

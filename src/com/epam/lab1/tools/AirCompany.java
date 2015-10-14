@@ -99,8 +99,8 @@ public class AirCompany {
 	/**
 	 * Filtering planes by fuel consumption
 	 * 
-	 * @param gasMin
-	 * @param gasMax
+	 * @param int gasMin
+	 * @param int gasMax
 	 * @return ArrayList
 	 */
 	public ArrayList<Aircraft> filter(int gasMin, int gasMax) {
