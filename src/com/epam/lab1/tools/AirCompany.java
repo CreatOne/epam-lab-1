@@ -9,7 +9,7 @@ import com.epam.lab1.AircraftEnum;
 import com.epam.lab1.ConcreteAircraftFactory;
 
 public class AirCompany {
-	ArrayList<Aircraft> planes = new ArrayList<Aircraft>();
+	private ArrayList<Aircraft> planes = new ArrayList<Aircraft>();
 
 	/**
 	 * Create plane
@@ -112,5 +112,19 @@ public class AirCompany {
 			}
 		}
 		return result;
+	}
+
+	/**
+	 * Clear all planes
+	 */
+	public void destroyPlanes() {
+		planes.clear();
+	}
+	
+	/**
+	 * Method for jUnit
+	 */
+	public ArrayList<Aircraft> getPlanes() {
+		return planes;
 	}
 }
