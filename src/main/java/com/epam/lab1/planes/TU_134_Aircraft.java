@@ -3,7 +3,7 @@ package com.epam.lab1.planes;
 import com.epam.lab1.entity.Aircraft;
 
 public class TU_134_Aircraft extends Aircraft {
-	private final String name = "ТУ-134";
+	private final String name = "TU-134";
 	
 	public TU_134_Aircraft() {
 		super();

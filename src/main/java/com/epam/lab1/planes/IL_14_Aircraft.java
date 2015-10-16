@@ -3,7 +3,7 @@ package com.epam.lab1.planes;
 import com.epam.lab1.entity.Aircraft;
 
 public class IL_14_Aircraft  extends Aircraft  {
-	private final String name = "ИЛ-14";
+	private final String name = "IL-14";
 
 	public IL_14_Aircraft() {
 		super();
