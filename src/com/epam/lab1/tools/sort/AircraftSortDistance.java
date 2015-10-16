@@ -1,8 +1,8 @@
-package com.epam.lab1.tools;
+package com.epam.lab1.tools.sort;
 
 import java.util.Comparator;
 
-import com.epam.lab1.Aircraft;
+import com.epam.lab1.entity.Aircraft;
 
 public class AircraftSortDistance implements Comparator<Aircraft> {
 	public int compare(Aircraft obj1, Aircraft obj2) {

@@ -10,14 +10,12 @@
  	Найти самолет в компании, соответствующий заданному диапазону параметров потребления горючего.
  */
 
-package com.epam.lab1.launcher;
+package com.epam.lab1;
 
 import java.util.ArrayList;
 
-import com.epam.lab1.Aircraft;
+import com.epam.lab1.entity.Aircraft;
 import com.epam.lab1.tools.AirCompany;
-
-// oleg_anastassov@epam.com
 
 public class Main {	
 	public static void main(String[] args) {
@@ -41,10 +39,10 @@ public class Main {
 		aircompany.sort();
 		aircompany.displayPlanes();
 
-		// Fuel consuption filter
+		// Fuel consumption filter
 		int min = 50;
 		int max = 90;
-		System.out.println("\nFiltered list ("+min+"-"+max+"): ");
+		System.out.println("\nFiltered list (Fuel consumption: "+min+"-"+max+"): ");
 		ArrayList<Aircraft> filtered_planes = aircompany.filter(min, max);
 		aircompany.displayPlanes(filtered_planes);
 	}

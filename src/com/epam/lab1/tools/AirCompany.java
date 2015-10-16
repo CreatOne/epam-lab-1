@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-import com.epam.lab1.Aircraft;
-import com.epam.lab1.AircraftEnum;
-import com.epam.lab1.ConcreteAircraftFactory;
+import com.epam.lab1.entity.Aircraft;
+import com.epam.lab1.entity.AircraftEnum;
+import com.epam.lab1.entity.ConcreteAircraftFactory;
+import com.epam.lab1.tools.sort.AircraftSortDistance;
 
 public class AirCompany {
 	private ArrayList<Aircraft> planes = new ArrayList<Aircraft>();

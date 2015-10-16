@@ -1,4 +1,4 @@
-package com.epam.lab1;
+package com.epam.lab1.entity;
 
 import com.epam.lab1.planes.A380_Aircraft;
 import com.epam.lab1.planes.Boeing_767_Aircraft;

@@ -1,4 +1,4 @@
-package com.epam.lab1;
+package com.epam.lab1.entity;
 
 public enum AircraftEnum {	
 	A380,

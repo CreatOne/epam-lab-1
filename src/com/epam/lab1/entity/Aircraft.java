@@ -1,4 +1,4 @@
-package com.epam.lab1;
+package com.epam.lab1.entity;
 
 /**
  * Абстрактный класс самолета
