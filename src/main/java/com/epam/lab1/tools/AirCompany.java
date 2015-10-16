@@ -15,7 +15,7 @@ public class AirCompany {
 	/**
 	 * Create plane
 	 * 
-	 * @param int count
+	 * @param count
 	 */
 	public void createPlanes(int count) {
 		ConcreteAircraftFactory aircraft_factory = new ConcreteAircraftFactory();
@@ -34,7 +34,7 @@ public class AirCompany {
 	/**
 	 * Get total passengers count
 	 * 
-	 * @return int Total passengers count
+	 * @return Total passengers count
 	 */
 	public short getTotalPassengers() {
 		short totalPassengers = 0;
@@ -100,8 +100,8 @@ public class AirCompany {
 	/**
 	 * Filtering planes by fuel consumption
 	 * 
-	 * @param int gasMin
-	 * @param int gasMax
+	 * @param gasMin
+	 * @param gasMax
 	 * @return ArrayList
 	 */
 	public ArrayList<Aircraft> filter(int gasMin, int gasMax) {

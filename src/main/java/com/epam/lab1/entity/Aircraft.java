@@ -1,7 +1,7 @@
 package com.epam.lab1.entity;
 
 /**
- * Абстрактный класс самолета
+ * Abstract aircraft class
  *  
  * @author Govorov Andrey
  *
@@ -67,7 +67,7 @@ public abstract class Aircraft {
 	/**
 	 * Set lifting capacity
 	 * 
-	 * @param double lifting_capacity
+	 * @param lifting_capacity
 	 */
 	public void setLiftingCapacity(double lifting_capacity) {
 		this.lifting_capacity = lifting_capacity;
@@ -76,7 +76,7 @@ public abstract class Aircraft {
 	/**
 	 * Set passenger capacity
 	 * 
-	 * @param short passenger_capacity
+	 * @param passenger_capacity
 	 */
 	public void setPassengerCapacity(short passenger_capacity) {
 		this.passenger_capacity = passenger_capacity;
@@ -85,7 +85,7 @@ public abstract class Aircraft {
 	/**
 	 * Set tank capacity
 	 * 
-	 * @param double tank_capacity
+	 * @param tank_capacity
 	 */
 	public void setTankCapacity(double tank_capacity) {
 		this.tank_capacity = tank_capacity;
@@ -94,7 +94,7 @@ public abstract class Aircraft {
 	/**
 	 * Set fuel consumption
 	 * 
-	 * @param double consumption
+	 * @param consumption
 	 */
 	public void setConsumption(double consumption) {
 		this.consumption = consumption;
