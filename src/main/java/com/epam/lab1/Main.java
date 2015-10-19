@@ -1,22 +1,20 @@
-/**
- * Taks number 9 - Planes
- * @author Andrey Govorov
- * @date 09.10.2015
- * @version 1
- 
- 	9.	Авиакомпания. Определить иерархию самолетов. Создать авиакомпанию. 
- 	Посчитать общую вместимость и грузоподъемность. 
- 	Провести сортировку самолетов компании по дальности полета. 
- 	Найти самолет в компании, соответствующий заданному диапазону параметров потребления горючего.
- */
-
 package com.epam.lab1;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.epam.lab1.entity.Aircraft;
 import com.epam.lab1.tools.AirCompany;
 
+/**
+ * Taks number 9. Авиакомпания. Определить иерархию самолетов. Создать авиакомпанию. 
+ 	Посчитать общую вместимость и грузоподъемность. 
+ 	Провести сортировку самолетов компании по дальности полета. 
+ 	Найти самолет в компании, соответствующий заданному диапазону параметров потребления горючего.
+
+ * @author Andrey Govorov
+ * @date 09.10.2015
+ * @version 1 	
+ */
 public class Main {	
 	public static void main(String[] args) {
 		AirCompany aircompany = new AirCompany();
@@ -28,22 +26,24 @@ public class Main {
 		
 		// Display all planes
 		aircompany.displayPlanes();
-		System.out.println("Planes count: " + aircompany.getPlanesCount());
+		System.out.println("Planes count: " + aircompany.returnPlanesCount());
+		System.out.println();
 		
 		// Display total info
-		System.out.println("\nTotal passenger: " + aircompany.getTotalPassengers() + " persons.");
-		System.out.println("Total baggage: " + aircompany.getTotalBaggage() + " kg\n");
+		System.out.println("Total passenger: " + aircompany.returnTotalPassengers() + " persons.");
+		System.out.println("Total baggage: " + aircompany.returnTotalBaggage() + " kg\n");
 
 		// Sort by distance
 		System.out.println("Distance sort: ");
-		aircompany.sort();
+		aircompany.sort("Distance");
 		aircompany.displayPlanes();
 
 		// Fuel consumption filter
 		int min = 50;
 		int max = 90;
-		System.out.println("\nFiltered list (Fuel consumption: "+min+"-"+max+"): ");
-		ArrayList<Aircraft> filtered_planes = aircompany.filter(min, max);
-		aircompany.displayPlanes(filtered_planes);
+		System.out.println();
+		System.out.println("Filtered list (Fuel consumption: "+min+"-"+max+"): ");
+		List<Aircraft> filteredPlanes = aircompany.filter(min, max);
+		aircompany.displayPlanes(filteredPlanes);
 	}
 }

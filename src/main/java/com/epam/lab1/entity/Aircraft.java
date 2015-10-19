@@ -2,63 +2,65 @@ package com.epam.lab1.entity;
 
 /**
  * Abstract aircraft class
- *  
+ * 
  * @author Govorov Andrey
- *
  */
 public abstract class Aircraft {
-	private String name; // Наименование самолета
-	private String description; // Описание
-
-	private double lifting_capacity; // Грузоподъемность
-	private int passenger_capacity; // Вместимость пассажиров
-	private double consumption; // Расход топлива
-	private double tank_capacity; // Вместимость топливного бака
-
-	public Aircraft() {}
+	protected String name; // Наименование самолета
+	protected double liftingCapacity; // Грузоподъемность
+	protected int passengerCapacity; // Вместимость пассажиров
+	protected double consumption; // Расход топлива
+	protected double tankCapacity; // Вместимость топливного бака
 
 	/**
-	 * Constructor
+	 * Create new aircraft
 	 * 
-	 * @param lifting_capacity
-	 * @param passenger_capacity
+	 * @param name Aircraft`s name
+	 * @param consumption Fuel consumption
+	 * @param tankCapacity Max tank capacity
+	 * @param liftingCapacity Max lifting capacity
+	 * @param passengerCapacity Max passenger`s capacity
 	 */
-	public Aircraft(double lifting_capacity, int passenger_capacity) {
-		this.lifting_capacity = lifting_capacity;
-		this.passenger_capacity = passenger_capacity;
+	public Aircraft(String name, double consumption, double tankCapacity,
+			double liftingCapacity, int passengerCapacity) {
+		this.name = name;
+		this.consumption = consumption;
+		this.tankCapacity = tankCapacity;
+		this.liftingCapacity = liftingCapacity;
+		this.passengerCapacity = passengerCapacity;
 	}
 
 	/**
 	 * Return lifting capacity on the plane
 	 * 
-	 * @return double
+	 * @return weight
 	 */
 	public double getLiftingCapacity() {
-		return lifting_capacity;
+		return liftingCapacity;
 	}
 
 	/**
-	 * Return passengers capacity
+	 * Return max passengers capacity
 	 * 
-	 * @return int
+	 * @return Max passengers count
 	 */
 	public int getPassengerCapacity() {
-		return passenger_capacity;
+		return passengerCapacity;
 	}
 
 	/**
 	 * Return tank capacity
 	 * 
-	 * @return double
+	 * @return Max gasoline volume
 	 */
-	public double getTank_capacity() {
-		return tank_capacity;
+	public double getTankCapacity() {
+		return tankCapacity;
 	}
 
 	/**
 	 * Return fuel consumption
 	 * 
-	 * @return double
+	 * @return consumption
 	 */
 	public double getConsumption() {
 		return consumption;
@@ -67,28 +69,28 @@ public abstract class Aircraft {
 	/**
 	 * Set lifting capacity
 	 * 
-	 * @param lifting_capacity
+	 * @param lifting capacity
 	 */
-	public void setLiftingCapacity(double lifting_capacity) {
-		this.lifting_capacity = lifting_capacity;
+	public void setLiftingCapacity(double liftingCapacity) {
+		this.liftingCapacity = liftingCapacity;
 	}
 
 	/**
 	 * Set passenger capacity
 	 * 
-	 * @param passenger_capacity
+	 * @param passenger capacity
 	 */
-	public void setPassengerCapacity(short passenger_capacity) {
-		this.passenger_capacity = passenger_capacity;
+	public void setPassengerCapacity(short passengerCapacity) {
+		this.passengerCapacity = passengerCapacity;
 	}
 
 	/**
 	 * Set tank capacity
 	 * 
-	 * @param tank_capacity
+	 * @param tank capacity
 	 */
-	public void setTankCapacity(double tank_capacity) {
-		this.tank_capacity = tank_capacity;
+	public void setTankCapacity(double tankCapacity) {
+		this.tankCapacity = tankCapacity;
 	}
 
 	/**
@@ -101,18 +103,9 @@ public abstract class Aircraft {
 	}
 
 	/**
-	 * Return aircraft`s description
-	 * 
-	 * @return String
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
 	 * Return aircraft`s name
 	 * 
-	 * @return String
+	 * @return name
 	 */
 	public String getName() {
 		return name;
@@ -121,10 +114,10 @@ public abstract class Aircraft {
 	/**
 	 * Return max distance
 	 * 
-	 * @return double
+	 * @return distance
 	 */
 	public double getDistance() {
 		// Округляем - 2 знака
-		return (double) Math.round((tank_capacity / consumption) * 100) / 100;
+		return (double) Math.round((tankCapacity / consumption) * 100) / 100;
 	}
 }

@@ -3,6 +3,7 @@ package test.java;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -15,11 +16,11 @@ public class AirCompanyTest{
 	@Test
 	public void createPlanes() {	
 		aircompany.createPlanes(7);
-		assertEquals(7, aircompany.getPlanesCount());
+		assertEquals(7, aircompany.returnPlanesCount());
 		
 		aircompany.destroyPlanes();
 		aircompany.createPlanes(10);
-		assertEquals(10, aircompany.getPlanesCount());
+		assertEquals(10, aircompany.returnPlanesCount());
 	}
 	
 	@Test
@@ -29,12 +30,12 @@ public class AirCompanyTest{
 		
 		int _totalPassengers = 0;
 		
-		ArrayList<Aircraft> planesList = aircompany.getPlanes();
+		List<Aircraft> planesList = aircompany.getPlanes();
 		for (Aircraft aircraft : planesList) {
 			_totalPassengers += aircraft.getPassengerCapacity();
 		}
 		
-		assertEquals(_totalPassengers, aircompany.getTotalPassengers());
+		assertEquals(_totalPassengers, aircompany.returnTotalPassengers());
 	}
 	
 	@Test
@@ -44,11 +45,11 @@ public class AirCompanyTest{
 		
 		double _totalBaggage = 0;
 		
-		ArrayList<Aircraft> planesList = aircompany.getPlanes();
+		List<Aircraft> planesList = aircompany.getPlanes();
 		for (Aircraft aircraft : planesList) {
 			_totalBaggage += aircraft.getLiftingCapacity();
 		}
 
-		assertEquals( _totalBaggage, aircompany.getTotalBaggage(), 0);
+		assertEquals( _totalBaggage, aircompany.returnTotalBaggage(), 0);
 	}
 }

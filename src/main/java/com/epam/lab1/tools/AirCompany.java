@@ -2,6 +2,7 @@ package com.epam.lab1.tools;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 import com.epam.lab1.entity.Aircraft;
@@ -10,25 +11,20 @@ import com.epam.lab1.entity.ConcreteAircraftFactory;
 import com.epam.lab1.tools.sort.AircraftSortDistance;
 
 public class AirCompany {
-	private ArrayList<Aircraft> planes = new ArrayList<Aircraft>();
+	private List<Aircraft> planes = new ArrayList<Aircraft>();
 
 	/**
 	 * Create plane
 	 * 
-	 * @param count
+	 * @param plane`s count that will be created
 	 */
 	public void createPlanes(int count) {
-		ConcreteAircraftFactory aircraft_factory = new ConcreteAircraftFactory();
+		ConcreteAircraftFactory aircraftFactory = new ConcreteAircraftFactory();
 		Random random = new Random();
 		for (int i = 0; i < count; i++) {
-			planes.add(aircraft_factory.createAircraft(AircraftEnum.values()[random
+			planes.add(aircraftFactory.createAircraft(AircraftEnum.values()[random
 					.nextInt(AircraftEnum.values().length)].name()));
 		}
-
-		// planes.add( aircraft_factory.createAircraft("A380") );
-		// planes.add( aircraft_factory.createAircraft("IL14") );
-		// planes.add( aircraft_factory.createAircraft("Tu134") );
-		// planes.add( aircraft_factory.createAircraft("Boeing767") );
 	}
 
 	/**
@@ -36,8 +32,8 @@ public class AirCompany {
 	 * 
 	 * @return Total passengers count
 	 */
-	public short getTotalPassengers() {
-		short totalPassengers = 0;
+	public int returnTotalPassengers() {
+		int totalPassengers = 0;
 		for (Aircraft aircraft : planes) {
 			totalPassengers += aircraft.getPassengerCapacity();
 		}
@@ -49,8 +45,8 @@ public class AirCompany {
 	 * 
 	 * @return double Total baggage weight in kg
 	 */
-	public double getTotalBaggage() {
-		double totalBaggage = (double) 0;
+	public double returnTotalBaggage() {
+		double totalBaggage = 0;
 		for (Aircraft aircraft : planes) {
 			totalBaggage += aircraft.getLiftingCapacity();
 		}
@@ -59,25 +55,22 @@ public class AirCompany {
 
 	/**
 	 * Display created aircrafts
+	 *
 	 */
 	public void displayPlanes() {
 		for (Aircraft aircraft : planes) {
-			System.out.println("\t - " + aircraft.getDescription() + " \tdist "
-					+ aircraft.getDistance() + "km, \tfuel consumption: "
-					+ aircraft.getConsumption());
+			System.out.println(aircraft);
 		}
 	}
 
 	/**
-	 * Display created aircrafts (override)
+	 * Display created aircrafts
 	 * 
-	 * @param filtered_planes
+	 * @param Filtered list of planes
 	 */
-	public void displayPlanes(ArrayList<Aircraft> filtered_planes) {
+	public void displayPlanes(List<Aircraft> filtered_planes) {
 		for (Aircraft aircraft : filtered_planes) {
-			System.out.println("\t - " + aircraft.getDescription() + " \tdist "
-					+ aircraft.getDistance() + "km, \tfuel consumption: "
-					+ aircraft.getConsumption());
+			System.out.println(aircraft);
 		}
 	}
 
@@ -86,15 +79,19 @@ public class AirCompany {
 	 * 
 	 * @return int
 	 */
-	public short getPlanesCount() {
-		return (short) planes.size();
+	public int returnPlanesCount() {
+		return planes.size();
 	}
 
 	/**
 	 * Sorting planes list in distance
 	 */
-	public void sort() {
-		Collections.sort(planes, new AircraftSortDistance());
+	public void sort(String direction) {
+		switch (direction) {
+			case "Distance":
+				Collections.sort(planes, new AircraftSortDistance());
+				break;
+		}
 	}
 
 	/**
@@ -104,8 +101,8 @@ public class AirCompany {
 	 * @param gasMax
 	 * @return ArrayList
 	 */
-	public ArrayList<Aircraft> filter(int gasMin, int gasMax) {
-		ArrayList<Aircraft> result = new ArrayList<Aircraft>();
+	public List<Aircraft> filter(int gasMin, int gasMax) {
+		List<Aircraft> result = new ArrayList<>();
 		for (Aircraft aircraft : planes) {
 			if (aircraft.getConsumption() >= gasMin
 					&& aircraft.getConsumption() <= gasMax) {
@@ -125,7 +122,7 @@ public class AirCompany {
 	/**
 	 * Method for jUnit
 	 */
-	public ArrayList<Aircraft> getPlanes() {
+	public List<Aircraft> getPlanes() {
 		return planes;
 	}
 }
